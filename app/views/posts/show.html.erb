@@ -5,3 +5,7 @@
 <%= link_to "edit", edit_post_path(@post) %>
 <br>
 <%= link_to "<< Back to Post List", posts_path %>
+
+<h3>Comments (<%= @post.comments.size %>)</h3>
+<%= render partial: 'posts/comment', collection: @post.comments %>
+<%= render partial: 'comments/form' %>
