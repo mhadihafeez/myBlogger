@@ -1,7 +1,10 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body %></p>
+<% if logged_in? %>
 <%= link_to "delete", post_path(@post), method: :delete ,data: {confirm: "Really delete the post?"} %>
 <br>
 <%= link_to "edit", edit_post_path(@post) %>
 <br>
+<% end %>
+
 <%= link_to "<< Back to Post List", posts_path %>
